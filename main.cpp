@@ -7,7 +7,6 @@
 /*
     Author: Security-Corp
     Name: Auto cliqueur
-
     Team:
         Agariy
         Unamed
@@ -30,17 +29,19 @@ int main()
 
             start = TRUE;
              while(start){
-                usleep(500);
+                usleep(700);
                 mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, pt.x, pt.y, 0, 0);
+
+                if(GetKeyState(VK_MENU) & Mask){
+                    break;
+                }
 
              }
 
 
         }
 
-        if(GetKeyState(VK_MENU) & Mask){
-            start = FALSE;
-        }
+
     }
 
     return 0;
